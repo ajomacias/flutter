@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_flutter/screens/home.dart';
+import 'package:practice_flutter/tarea_clase1/tarea_clase1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      routes: {
+        'listUsers': (context) => ListUserScreen(),
+        'user': (context) => const UserScreen()
+      },
+      initialRoute: 'listUsers',
     );
   }
 }
