@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_flutter/tarea_clase1/tarea_clase1.dart';
+import 'package:practice_flutter/tarea1profe/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-        'listUsers': (context) => ListUserScreen(),
-        'user': (context) => const UserScreen()
-      },
-      initialRoute: 'listUsers',
+      routes: AppRoutes.getRoutes(),
+      initialRoute: AppRoutes.initialRoute,
     );
   }
 }
