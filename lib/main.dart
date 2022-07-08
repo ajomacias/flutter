@@ -12,9 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Desarrollo de Aplicaciones Móviles',
       debugShowCheckedModeBanner: false,
-      routes: AppRoutes.getRoutes(),
       initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getRoutes(),
     );
   }
 }

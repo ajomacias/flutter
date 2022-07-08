@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UserListScreen extends StatefulWidget {
-  UserListScreen({Key? key}) : super(key: key);
+  const UserListScreen({Key? key}) : super(key: key);
 
   @override
   State<UserListScreen> createState() => _UserListScreenState();

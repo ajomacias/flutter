@@ -1,8 +1,6 @@
-import 'dart:js';
-
-import 'package:practice_flutter/tarea1profe/models/menu_option.dart';
 import 'package:flutter/material.dart' show Icons, Widget, BuildContext;
-import 'package:practice_flutter/tarea1profe/tarea1profe.dart';
+import 'package:practice_flutter/tarea1profe/models/menu_option.dart';
+import 'package:practice_flutter/tarea1profe/screens/screens.dart';
 
 class AppRoutes {
   static const initialRoute = 'home';
@@ -12,7 +10,7 @@ class AppRoutes {
         icon: Icons.home,
         name: 'Home Screen',
         route: 'home',
-        screen: const HomeScreen()),
+        screen: HomeScreen()),
     MenuOption(
         icon: Icons.home,
         name: 'UserForm',
@@ -22,7 +20,7 @@ class AppRoutes {
         icon: Icons.home,
         name: 'User list',
         route: 'user_list',
-        screen: UserListScreen()),
+        screen: const UserListScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext contex)> getRoutes() {
