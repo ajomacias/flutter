@@ -1,9 +1,10 @@
 class User {
-  String? name;
+  String name;
   String? correo;
   String? password;
+  String? image;
 
-  User({this.name, this.correo, this.password});
+  User({required this.name, this.correo, this.password});
 }
 
 List<User> users = [
