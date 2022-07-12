@@ -14,20 +14,38 @@ class CardWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Column(
-              children: [Text(user.name), Text(user.correo ?? "")],
+              children: [
+                FadeInImage.assetNetwork(
+                    placeholder: 'images/descarga.png',
+                    image:
+                        'https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png'),
+                Text(user.name),
+                Text(user.correo ?? "")
+              ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 TextButton(
-                  child: const Text('BUY TICKETS'),
-                  onPressed: () {/* ... */},
-                ),
-                const SizedBox(width: 8),
-                TextButton(
-                  child: const Text('LISTEN'),
-                  onPressed: () {/* ... */},
-                ),
+                    child: const Text('VER'),
+                    onPressed: () => showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: Text(user.name),
+                            content: Image.network('${user.image}'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(context, 'Cancel'),
+                                child: const Text('Cancel'),
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, 'OK'),
+                                child: const Text('OK'),
+                              ),
+                            ],
+                          ),
+                        )),
                 const SizedBox(width: 8),
               ],
             ),

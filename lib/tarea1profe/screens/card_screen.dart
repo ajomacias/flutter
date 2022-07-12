@@ -27,8 +27,9 @@ class _CardScreenState extends State<CardScreen> {
         appBar: AppBar(
           title: const Text('Screen card'),
         ),
-        body: Center(
+        body: SingleChildScrollView(
+            child: Center(
           child: Column(children: <Widget>[...sos]),
-        ));
+        )));
   }
 }
