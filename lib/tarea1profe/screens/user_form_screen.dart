@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter/tarea1profe/widgets/widgets.dart';
 
 class UserFormScreen extends StatelessWidget {
   const UserFormScreen({Key? key}) : super(key: key);
@@ -6,27 +7,28 @@ class UserFormScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('User form'),
-      ),
-      body: Column(children: [
-        TextFormField(
-          initialValue: 'Juan Perez',
-          textCapitalization: TextCapitalization.words,
-          onChanged: (value) {
-            print(value);
-          },
-          /*validator: (value) {
-            if (value.length < 3) return 'no debe ser menor a tres';
-            
-          },
-          */
-          decoration: const InputDecoration(
-              hintText: 'Escriba su nombre',
-              labelText: 'sisiss',
-              helperText: 'solo mayusculas'),
-        )
-      ]),
-    );
+        appBar: AppBar(
+          title: const Text('User form'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 4.2),
+          child: Column(children: const <Widget>[
+            CustomTextFormField(
+              helper: 'hola soy el helper',
+            ),
+            CustomTextFormField(
+              helper: 'hola soy el helper',
+            ),
+            CustomTextFormField(
+              helper: 'hola soy el helper',
+            ),
+            CustomTextFormField(
+              helper: 'hola soy el helper',
+            ),
+            CustomTextFormField(
+              helper: 'hola soy el helper',
+            ),
+          ]),
+        ));
   }
 }

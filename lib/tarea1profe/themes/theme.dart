@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart'
-    show Color, Colors, ThemeData, AppBarTheme;
+import 'package:flutter/material.dart';
 
 class AppTheme {
   static const Color primary = Colors.indigo;
@@ -8,4 +7,7 @@ class AppTheme {
     primaryColor: primary,
     appBarTheme: const AppBarTheme(color: primary, elevation: 0),
   );
+
+  static const InputBorder inPutBorder = OutlineInputBorder();
+  static const Icon icon = Icon(Icons.send);
 }
