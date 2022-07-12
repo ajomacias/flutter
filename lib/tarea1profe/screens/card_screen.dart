@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_flutter/data/users.dart';
-import 'package:practice_flutter/tarea1profe/widgets/CardWibget.dart';
+import 'package:practice_flutter/tarea1profe/widgets/card_wibget.dart';
 
 // ignore: must_be_immutable
 class CardScreen extends StatefulWidget {
