@@ -6,29 +6,28 @@ class UserFormScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> myFormKey = GlobalKey<FormState>();
+    final Map<String, String> myFormValues = {'campo1': ''};
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('User form'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 4.2),
-          child: Column(children: const <Widget>[
-            CustomTextFormField(
-              helper: 'hola soy el helper',
-            ),
-            CustomTextFormField(
-              helper: 'hola soy el helper',
-            ),
-            CustomTextFormField(
-              helper: 'hola soy el helper',
-            ),
-            CustomTextFormField(
-              helper: 'hola soy el helper',
-            ),
-            CustomTextFormField(
-              helper: 'hola soy el helper',
-            ),
-          ]),
-        ));
+      appBar: AppBar(
+        title: const Text('User form'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 4.2),
+        child: Column(key: myFormKey, children: <Widget>[
+          CustomTextFormField(
+            helper: 'hola soy el helper',
+            formPropperty: 'campo1',
+            formValues: myFormValues,
+          ),
+        ]),
+      ),
+      floatingActionButton: ElevatedButton(
+        child: const Text('Mostrar'),
+        onPressed: () {
+          print(myFormValues);
+        },
+      ),
+    );
   }
 }

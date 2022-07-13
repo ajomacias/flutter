@@ -13,6 +13,8 @@ class CustomTextFormField extends StatelessWidget {
     this.private,
     this.type,
     this.label,
+    required this.formPropperty,
+    required this.formValues,
   }) : super(key: key);
   final String? hintText;
   final Icon? icon;
@@ -23,6 +25,8 @@ class CustomTextFormField extends StatelessWidget {
   final bool? private;
   final TextInputType? type;
   final String? label;
+  final Map<String, String?> formValues;
+  final String formPropperty;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +44,9 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         labelText: label,
       ),
+      onChanged: (value) {
+        formValues[formPropperty] = value;
+      },
     );
   }
 }
