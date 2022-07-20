@@ -16,7 +16,7 @@ class AppRoutes {
         icon: Icons.home,
         name: 'UserForm',
         route: 'user_form',
-        screen: const UserFormScreen()),
+        screen: UserForm()),
     MenuOption(
         icon: Icons.home,
         name: 'User list',
