@@ -37,7 +37,7 @@ class UserListScreen extends StatelessWidget {
                                 handlePress(
                                     userProvider, snapShot, context, index);
                               },
-                              icon: const Icon(Icons.update))
+                              icon: const Icon(Icons.upload_file_outlined))
                         ],
                       ));
                 },
@@ -45,9 +45,13 @@ class UserListScreen extends StatelessWidget {
                   return const Divider();
                 },
                 itemCount: snapShot.data!.length);
+          } else if (snapShot.hasError) {
+            return const Center(
+              child: Icon(Icons.error, size: 20),
+            );
           }
           return Center(
-            child: Image.asset('images/loading.gif'),
+            child: CircularProgressIndicator(color: Colors.blue[700]),
           );
         },
       ),

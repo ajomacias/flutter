@@ -13,6 +13,8 @@ class CustomTextFormField extends StatelessWidget {
     this.private,
     this.type,
     this.label,
+    this.sizeText,
+    this.opasityText,
     required this.formPropperty,
     required this.formValues,
   }) : super(key: key);
@@ -27,10 +29,15 @@ class CustomTextFormField extends StatelessWidget {
   final String? label;
   final Map<String, String?> formValues;
   final String formPropperty;
+  final double? sizeText;
+  final double? opasityText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(
+          fontSize: sizeText,
+          color: Colors.black.withOpacity(opasityText ?? 1)),
       keyboardType: type,
       obscureText: private ?? false,
       initialValue: value,
@@ -39,7 +46,7 @@ class CustomTextFormField extends StatelessWidget {
         hintText: hintText,
         border: AppTheme.inPutBorder,
         helperText: helper,
-        icon: icon ?? AppTheme.icon,
+        icon: icon,
         contentPadding: EdgeInsets.zero,
         suffixIcon: suffixIcon,
         labelText: label,
@@ -50,22 +57,3 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 }
-
-/*
-TextFormField(
-          initialValue: 'Juan Perez',
-          textCapitalization: TextCapitalization.words,
-          onChanged: (value) {
-            print(value);
-          },
-          /*validator: (value) {
-            if (value.length < 3) return 'no debe ser menor a tres';
-            
-          },
-          */
-          decoration: const InputDecoration(
-              hintText: 'Escriba su nombre',
-              labelText: 'sisiss',
-              helperText: 'solo mayusculas'),
-        )
- */
